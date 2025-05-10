@@ -5,6 +5,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
+import kotlin.math.min
 
 data class WaterIntakeState(
     val currentIntake: Int = 0,
@@ -16,9 +17,11 @@ class WaterIntakeViewModel : ViewModel() {
     private val _state = MutableStateFlow(WaterIntakeState())
     val state: StateFlow<WaterIntakeState> = _state.asStateFlow()
 
-    fun addWater(amount: Int) {
+    fun addWaterIntake(amount: Int) {
+        if (amount <= 0) return
+        
         _state.update { currentState ->
-            val newIntake = currentState.currentIntake + amount
+            val newIntake = min(currentState.currentIntake + amount, Int.MAX_VALUE)
             val isGoalAchieved = newIntake >= currentState.dailyGoal
             currentState.copy(
                 currentIntake = newIntake,

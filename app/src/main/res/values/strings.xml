@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Water Intake Uganda</string>
+    <string name="app_name">Water Intake</string>
+    <string name="welcome_title">Welcome to Water Intake</string>
+    <string name="welcome_subtitle">Track your daily water consumption</string>
+    <string name="get_started">Get Started</string>
+    <string name="daily_goal">Daily Goal: %d ml</string>
+    <string name="current_intake">Current Intake: %d ml</string>
+    <string name="recent_intakes">Recent Intakes</string>
+    <string name="add_water">Add Water</string>
+    <string name="water_intake">Water Intake</string>
+    <string name="invalid_amount">Please enter a valid amount greater than 0</string>
+    <string name="no_intakes_today">No water intake recorded today</string>
 
     <string name="nav_home">Home</string>
     <string name="nav_track">Track Water</string>
@@ -23,13 +33,9 @@
     <string name="water_importance_14">Kidney Health: Water supports kidney function by helping to flush out waste and toxins.</string>
 
     <string name="track_water_title">Track Your Water Intake</string>
-    <string name="daily_goal">Daily Goal: 2.5 Liters</string>
-    <string name="current_intake">Current Intake: %1$s</string>
-    <string name="add_water">Add Water</string>
     <string name="water_amount">Amount (ml)</string>
     <string name="save">Save</string>
     <string name="cancel">Cancel</string>
-
     <string name="water_added">Water intake recorded!</string>
     <string name="goal_achieved">Congratulations! You\'ve reached your daily goal!</string>
     <string name="keep_going">Keep going! You\'re doing great!</string>

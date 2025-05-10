@@ -8,6 +8,7 @@ import com.example.waterintake.model.WaterIntake
 import com.example.waterintake.model.DailyWaterGoal
 import com.example.waterintake.model.WaterType
 import java.util.*
+import kotlin.math.min
 
 data class HomeUiState(
     val dailyGoal: DailyWaterGoal = DailyWaterGoal(),
@@ -22,6 +23,8 @@ class HomeViewModel : ViewModel() {
     val uiState: StateFlow<HomeUiState> = _uiState.asStateFlow()
 
     fun updateDailyGoal(targetAmount: Int) {
+        if (targetAmount <= 0) return
+        
         val currentState = _uiState.value
         _uiState.value = currentState.copy(
             dailyGoal = currentState.dailyGoal.copy(targetAmount = targetAmount),
@@ -33,6 +36,8 @@ class HomeViewModel : ViewModel() {
     }
 
     fun addWaterIntake(amount: Int, type: WaterType) {
+        if (amount <= 0) return
+        
         val currentState = _uiState.value
         val newIntake = WaterIntake(
             amount = amount,
@@ -40,11 +45,23 @@ class HomeViewModel : ViewModel() {
             timestamp = Date()
         )
         
-        val updatedIntakes = (currentState.recentIntakes + newIntake)
+        // Filter intakes for today only
+        val today = Calendar.getInstance().apply {
+            set(Calendar.HOUR_OF_DAY, 0)
+            set(Calendar.MINUTE, 0)
+            set(Calendar.SECOND, 0)
+            set(Calendar.MILLISECOND, 0)
+        }.time
+        
+        val todayIntakes = currentState.recentIntakes.filter { 
+            it.timestamp.after(today) || it.timestamp.equals(today)
+        }
+        
+        val updatedIntakes = (todayIntakes + newIntake)
             .sortedByDescending { it.timestamp }
             .take(5) // Keep only the 5 most recent entries
         
-        val newTotalIntake = currentState.totalIntakeToday + amount
+        val newTotalIntake = min(currentState.totalIntakeToday + amount, Int.MAX_VALUE)
         
         _uiState.value = currentState.copy(
             recentIntakes = updatedIntakes,

@@ -13,11 +13,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.scale
 import androidx.compose.ui.res.dimensionResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.waterintake.R
-import com.example.waterintake.model.AppResources
 import com.example.waterintake.viewmodel.WelcomeViewModel
 
 @Composable
@@ -54,10 +54,10 @@ fun WelcomeScreen(
                 )
             ) {
                 Text(
-                    text = AppResources.Strings.APP_NAME,
+                    text = stringResource(R.string.app_name),
                     style = MaterialTheme.typography.headlineLarge,
                     fontWeight = FontWeight.Bold,
-                    textAlign = TextAlign.Center
+                    color = MaterialTheme.colorScheme.primary
                 )
             }
 
@@ -66,9 +66,10 @@ fun WelcomeScreen(
                 enter = fadeIn(animationSpec = tween(1000, delayMillis = 500))
             ) {
                 Text(
-                    text = AppResources.Strings.WELCOME_MESSAGE,
+                    text = stringResource(R.string.welcome_message),
                     style = MaterialTheme.typography.bodyLarge,
-                    textAlign = TextAlign.Center
+                    textAlign = TextAlign.Center,
+                    modifier = Modifier.padding(horizontal = dimensionResource(id = R.dimen.screen_padding))
                 )
             }
 
@@ -77,7 +78,7 @@ fun WelcomeScreen(
                 enter = fadeIn(animationSpec = tween(1000, delayMillis = 1000))
             ) {
                 Text(
-                    text = AppResources.Strings.WATER_IMPORTANCE_1,
+                    text = stringResource(R.string.water_importance_1),
                     style = MaterialTheme.typography.bodyMedium,
                     textAlign = TextAlign.Center
                 )
@@ -98,7 +99,7 @@ fun WelcomeScreen(
                     shape = MaterialTheme.shapes.medium
                 ) {
                     Text(
-                        text = AppResources.Strings.GET_STARTED,
+                        text = stringResource(R.string.get_started),
                         style = MaterialTheme.typography.titleMedium,
                         fontWeight = FontWeight.Bold
                     )
