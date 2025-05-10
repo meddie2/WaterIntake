@@ -12,11 +12,11 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.scale
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.waterintake.R
 import com.example.waterintake.model.AppResources
 import com.example.waterintake.viewmodel.WelcomeViewModel
 
@@ -39,12 +39,12 @@ fun WelcomeScreen(
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .padding(16.dp),
+            .padding(dimensionResource(id = R.dimen.screen_padding)),
         contentAlignment = Alignment.Center
     ) {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.spacedBy(24.dp)
+            verticalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen.spacing_large))
         ) {
             AnimatedVisibility(
                 visible = uiState.isVisible,
@@ -93,7 +93,7 @@ fun WelcomeScreen(
                     onClick = onNavigateToHome,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .height(AppResources.Dimensions.BUTTON_HEIGHT.dp)
+                        .height(dimensionResource(id = R.dimen.button_height))
                         .scale(scale),
                     shape = MaterialTheme.shapes.medium
                 ) {

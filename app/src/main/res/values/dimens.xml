@@ -18,4 +18,17 @@
     <dimen name="icon_size">24dp</dimen>
     <dimen name="card_corner_radius">12dp</dimen>
     <dimen name="image_size">120dp</dimen>
+    
+    <!-- Additional Component Sizes -->
+    <dimen name="large_icon_size">48dp</dimen>
+    <dimen name="progress_indicator_padding">16dp</dimen>
+    <dimen name="card_padding">16dp</dimen>
+    <dimen name="card_vertical_padding">8dp</dimen>
+    <dimen name="screen_padding">16dp</dimen>
+    <dimen name="vector_icon_size">24dp</dimen>
+    <dimen name="launcher_icon_size">108dp</dimen>
+    
+    <!-- Recent Intakes -->
+    <dimen name="recent_intakes_title_padding">8dp</dimen>
+    <dimen name="recent_intakes_card_padding">4dp</dimen>
 </resources> 

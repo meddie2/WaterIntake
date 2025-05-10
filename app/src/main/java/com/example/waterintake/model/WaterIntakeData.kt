@@ -1,11 +1,11 @@
 package com.example.waterintake.model
 
-import java.time.LocalDateTime
+import java.util.*
 
 data class WaterIntake(
     val id: Long = 0,
     val amount: Int, // in milliliters
-    val timestamp: LocalDateTime = LocalDateTime.now(),
+    val timestamp: Date = Date(),
     val type: WaterType = WaterType.GLASS
 )
 
@@ -18,5 +18,5 @@ enum class WaterType {
 data class DailyWaterGoal(
     val targetAmount: Int = 2500, // Default 2.5 liters
     val currentAmount: Int = 0,
-    val date: LocalDateTime = LocalDateTime.now()
+    val date: Date = Date()
 ) 

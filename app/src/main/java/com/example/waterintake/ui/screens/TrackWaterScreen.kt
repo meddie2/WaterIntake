@@ -8,9 +8,9 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
-import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.waterintake.R
 import com.example.waterintake.viewmodel.WaterIntakeViewModel
@@ -27,17 +27,15 @@ fun TrackWaterScreen(
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text(stringResource(R.string.track_water_title)) },
+                title = { Text(text = stringResource(R.string.track_water)) },
                 navigationIcon = {
                     IconButton(onClick = onNavigateBack) {
-                        Icon(Icons.Default.ArrowBack, contentDescription = "Back")
+                        Icon(
+                            imageVector = Icons.Default.ArrowBack,
+                            contentDescription = stringResource(R.string.back)
+                        )
                     }
-                },
-                colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = MaterialTheme.colorScheme.primary,
-                    titleContentColor = MaterialTheme.colorScheme.onPrimary,
-                    navigationIconContentColor = MaterialTheme.colorScheme.onPrimary
-                )
+                }
             )
         }
     ) { paddingValues ->
@@ -45,77 +43,35 @@ fun TrackWaterScreen(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(paddingValues)
-                .padding(16.dp),
+                .padding(dimensionResource(id = R.dimen.screen_padding)),
             horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.spacedBy(16.dp)
+            verticalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen.spacing_medium))
         ) {
-            Text(
-                text = stringResource(R.string.daily_goal),
-                style = MaterialTheme.typography.titleLarge
-            )
-
-            Text(
-                text = stringResource(
-                    R.string.current_intake,
-                    "${state.currentIntake}ml"
-                ),
-                style = MaterialTheme.typography.headlineMedium
-            )
-
-            if (state.isGoalAchieved) {
-                Card(
-                    modifier = Modifier.fillMaxWidth(),
-                    colors = CardDefaults.cardColors(
-                        containerColor = MaterialTheme.colorScheme.secondaryContainer
-                    )
-                ) {
-                    Text(
-                        text = stringResource(R.string.goal_achieved),
-                        modifier = Modifier.padding(16.dp),
-                        style = MaterialTheme.typography.bodyLarge,
-                        color = MaterialTheme.colorScheme.onSecondaryContainer
-                    )
-                }
-            }
-
             OutlinedTextField(
                 value = waterAmount,
                 onValueChange = { waterAmount = it },
-                label = { Text(stringResource(R.string.water_amount)) },
+                label = { Text(text = stringResource(R.string.water_amount)) },
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                 modifier = Modifier.fillMaxWidth()
             )
 
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.spacedBy(8.dp)
+            Button(
+                onClick = {
+                    waterAmount.toIntOrNull()?.let { amount ->
+                        viewModel.addWaterIntake(amount)
+                        waterAmount = ""
+                    }
+                },
+                modifier = Modifier.fillMaxWidth()
             ) {
-                Button(
-                    onClick = {
-                        waterAmount.toIntOrNull()?.let { amount ->
-                            viewModel.addWater(amount)
-                            waterAmount = ""
-                        }
-                    },
-                    modifier = Modifier.weight(1f),
-                    enabled = waterAmount.isNotEmpty()
-                ) {
-                    Text(stringResource(R.string.save))
-                }
-
-                OutlinedButton(
-                    onClick = { waterAmount = "" },
-                    modifier = Modifier.weight(1f)
-                ) {
-                    Text(stringResource(R.string.cancel))
-                }
+                Text(text = stringResource(R.string.add_water))
             }
 
             LinearProgressIndicator(
                 progress = (state.currentIntake.toFloat() / state.dailyGoal),
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(vertical = 16.dp)
+                    .padding(vertical = dimensionResource(id = R.dimen.progress_indicator_padding))
             )
         }
     }
