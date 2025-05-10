@@ -1,18 +1,12 @@
 package com.example.waterintake.model
 
-import java.time.LocalDateTime
-
-enum class Screen {
-    Welcome,
-    Home,
-    TrackWater
-}
+import java.util.Date
 
 data class AppState(
     val currentScreen: Screen = Screen.Welcome,
     val waterIntakes: List<WaterIntake> = emptyList(),
     val dailyGoal: DailyWaterGoal = DailyWaterGoal(),
-    val lastUpdated: LocalDateTime = LocalDateTime.now()
+    val lastUpdated: Date = Date()
 )
 
 sealed class UiEvent {

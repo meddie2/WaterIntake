@@ -1,43 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Water Intake</string>
-    <string name="welcome_title">Welcome to Water Intake</string>
-    <string name="welcome_subtitle">Track your daily water consumption</string>
-    <string name="get_started">Get Started</string>
-    <string name="daily_goal">Daily Goal: %d ml</string>
-    <string name="current_intake">Current Intake: %d ml</string>
-    <string name="recent_intakes">Recent Intakes</string>
-    <string name="add_water">Add Water</string>
-    <string name="water_intake">Water Intake</string>
-    <string name="invalid_amount">Please enter a valid amount greater than 0</string>
-    <string name="no_intakes_today">No water intake recorded today</string>
-    <string name="back">Back</string>
-
+    
+    <!-- Navigation -->
     <string name="nav_home">Home</string>
     <string name="nav_track">Track Water</string>
-
-    <string name="welcome_message">Welcome to Water Intake Uganda</string>
-    <string name="water_importance_title">Why Water Matters</string>
-    <string name="water_importance_1">Stay Hydrated: Drinking enough water helps maintain your body\'s fluid balance.</string>
-    <string name="water_importance_2">Boost Energy: Proper hydration can increase your energy levels and improve your mood.</string>
-    <string name="water_importance_3">Improve Health: Water is essential for digestion, absorption, and circulation.</string>
-    <string name="water_importance_4">Support Digestion: Water helps break down food and keeps your digestive system running smoothly.</string>
-    <string name="water_importance_5">Maintain Temperature: Water helps regulate your body temperature, especially during physical activity.</string>
-    <string name="water_importance_6">Enhance Skin Health: Regular water intake can improve skin elasticity and reduce dryness.</string>
-    <string name="water_importance_7">Support Kidney Function: Water helps flush out toxins and supports kidney health.</string>
-    <string name="water_importance_8">Promote Weight Loss: Drinking water can help control appetite and boost metabolism.</string>
-    <string name="water_importance_9">Digestion: Water aids in the digestion process, helping to break down food and absorb nutrients.</string>
-    <string name="water_importance_10">Energy: Proper hydration is key to maintaining high energy levels throughout the day.</string>
-    <string name="water_importance_11">Health: Water is crucial for overall health, supporting various bodily functions.</string>
-    <string name="water_importance_12">Hydration: Regular water intake is essential for staying hydrated and healthy.</string>
-    <string name="water_importance_13">Joint Health: Water helps lubricate joints and reduce the risk of joint pain.</string>
-    <string name="water_importance_14">Kidney Health: Water supports kidney function by helping to flush out waste and toxins.</string>
-
+    <string name="nav_settings">Settings</string>
+    <string name="nav_back">Back</string>
+    
+    <!-- Welcome Screen -->
+    <string name="welcome_message">Welcome to Water Intake Tracker</string>
+    <string name="welcome_subtitle">Track your daily water consumption</string>
+    <string name="get_started">Get Started</string>
+    <string name="feature_track_title">Track Your Intake</string>
+    <string name="feature_track_desc">Monitor different types of beverages and stay hydrated throughout the day</string>
+    <string name="feature_goals_title">Set Daily Goals</string>
+    <string name="feature_goals_desc">Customize your daily water intake goals based on your needs</string>
+    <string name="feature_progress_title">Monitor Progress</string>
+    <string name="feature_progress_desc">Track your progress with visual indicators and daily statistics</string>
+    <string name="feature_reminders_title">Stay Hydrated</string>
+    <string name="feature_reminders_desc">Get timely reminders to maintain your hydration levels</string>
+    
+    <!-- Home Screen -->
+    <string name="daily_goal">Daily Goal</string>
+    <string name="current_intake">Current Intake</string>
+    <string name="remaining">Remaining</string>
+    <string name="add_water">Add Water</string>
+    <string name="recent_intakes">Recent Intakes</string>
+    
+    <!-- Track Water Screen -->
     <string name="track_water_title">Track Your Water Intake</string>
-    <string name="water_amount">Amount (ml)</string>
+    <string name="amount_label">Amount (ml)</string>
+    <string name="type_label">Type</string>
     <string name="save">Save</string>
     <string name="cancel">Cancel</string>
-    <string name="water_added">Water intake recorded!</string>
-    <string name="goal_achieved">Congratulations! You\'ve reached your daily goal!</string>
-    <string name="keep_going">Keep going! You\'re doing great!</string>
+    
+    <!-- Water Types -->
+    <string name="water_type_plain">Plain Water</string>
+    <string name="water_type_juice">Juice</string>
+    <string name="water_type_tea">Tea</string>
+    <string name="water_type_coffee">Coffee</string>
+    
+    <!-- Settings -->
+    <string name="settings_title">Settings</string>
+    <string name="daily_goal_setting">Daily Water Goal</string>
+    <string name="goal_hint">Enter your daily goal in ml</string>
+    <string name="save_settings">Save Settings</string>
+    
+    <!-- Messages -->
+    <string name="goal_updated">Daily goal updated successfully</string>
+    <string name="water_added">Water intake recorded</string>
+    <string name="error_invalid_amount">Please enter a valid amount</string>
+    <string name="error_invalid_goal">Please enter a valid goal</string>
 </resources>

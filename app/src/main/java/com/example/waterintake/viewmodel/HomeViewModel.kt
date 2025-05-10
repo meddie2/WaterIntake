@@ -54,7 +54,7 @@ class HomeViewModel : ViewModel() {
         }.time
         
         val todayIntakes = currentState.recentIntakes.filter { 
-            it.timestamp.after(today) || it.timestamp.equals(today)
+            it.timestamp.after(today) || it.timestamp == today
         }
         
         val updatedIntakes = (todayIntakes + newIntake)

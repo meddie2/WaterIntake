@@ -14,36 +14,92 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.googlefonts.Font
+import androidx.compose.ui.text.googlefonts.GoogleFont
 import androidx.core.view.WindowCompat
+import androidx.compose.material3.Shapes
+import androidx.compose.material3.Typography
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 
 private val LightColorScheme = lightColorScheme(
-    primary = Color(0xFF2196F3),
+    primary = Color(0xFF2196F3),      // Blue
+    secondary = Color(0xFF4CAF50),    // Green
+    tertiary = Color(0xFFFFC107),     // Amber
+    background = Color(0xFFF5F5F5),   // Light Gray
+    surface = Color(0xFFFFFFFF),      // White
     onPrimary = Color.White,
-    primaryContainer = Color(0xFFBBDEFB),
-    onPrimaryContainer = Color(0xFF1976D2),
-    secondary = Color(0xFF4CAF50),
     onSecondary = Color.White,
-    secondaryContainer = Color(0xFFC8E6C9),
-    onSecondaryContainer = Color(0xFF388E3C),
-    background = Color(0xFFF5F5F5),
-    onBackground = Color(0xFF212121),
-    surface = Color.White,
-    onSurface = Color(0xFF212121)
+    onTertiary = Color.Black,
+    onBackground = Color(0xFF1C1B1F),
+    onSurface = Color(0xFF1C1B1F),
 )
 
 private val DarkColorScheme = darkColorScheme(
-    primary = Color(0xFF90CAF9),
-    onPrimary = Color(0xFF1976D2),
-    primaryContainer = Color(0xFF1976D2),
-    onPrimaryContainer = Color.White,
-    secondary = Color(0xFF81C784),
-    onSecondary = Color(0xFF388E3C),
-    secondaryContainer = Color(0xFF388E3C),
-    onSecondaryContainer = Color.White,
-    background = Color(0xFF121212),
+    primary = Color(0xFF90CAF9),      // Light Blue
+    secondary = Color(0xFF81C784),    // Light Green
+    tertiary = Color(0xFFFFD54F),     // Light Amber
+    background = Color(0xFF121212),   // Dark Gray
+    surface = Color(0xFF1E1E1E),      // Dark Surface
+    onPrimary = Color.Black,
+    onSecondary = Color.Black,
+    onTertiary = Color.Black,
     onBackground = Color.White,
-    surface = Color(0xFF1E1E1E),
-    onSurface = Color.White
+    onSurface = Color.White,
+)
+
+val AppShapes = Shapes(
+    small = androidx.compose.foundation.shape.RoundedCornerShape(4.dp),
+    medium = androidx.compose.foundation.shape.RoundedCornerShape(8.dp),
+    large = androidx.compose.foundation.shape.RoundedCornerShape(16.dp)
+)
+
+val AppTypography = Typography(
+    headlineLarge = TextStyle(
+        fontFamily = FontFamily.Default,
+        fontWeight = FontWeight.Bold,
+        fontSize = 32.sp,
+        lineHeight = 40.sp,
+        letterSpacing = 0.sp
+    ),
+    headlineMedium = TextStyle(
+        fontFamily = FontFamily.Default,
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 28.sp,
+        lineHeight = 36.sp,
+        letterSpacing = 0.sp
+    ),
+    titleLarge = TextStyle(
+        fontFamily = FontFamily.Default,
+        fontWeight = FontWeight.Normal,
+        fontSize = 22.sp,
+        lineHeight = 28.sp,
+        letterSpacing = 0.sp
+    ),
+    bodyLarge = TextStyle(
+        fontFamily = FontFamily.Default,
+        fontWeight = FontWeight.Normal,
+        fontSize = 16.sp,
+        lineHeight = 24.sp,
+        letterSpacing = 0.5.sp
+    ),
+    bodyMedium = TextStyle(
+        fontFamily = FontFamily.Default,
+        fontWeight = FontWeight.Normal,
+        fontSize = 14.sp,
+        lineHeight = 20.sp,
+        letterSpacing = 0.25.sp
+    ),
+    labelMedium = TextStyle(
+        fontFamily = FontFamily.Default,
+        fontWeight = FontWeight.Medium,
+        fontSize = 12.sp,
+        lineHeight = 16.sp,
+        letterSpacing = 0.5.sp
+    )
 )
 
 @Composable
@@ -72,7 +128,8 @@ fun WaterIntakeTheme(
 
     MaterialTheme(
         colorScheme = colorScheme,
-        typography = Typography,
+        typography = AppTypography,
+        shapes = AppShapes,
         content = content
     )
 }
