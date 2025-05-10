@@ -11,6 +11,7 @@
     <string name="water_intake">Water Intake</string>
     <string name="invalid_amount">Please enter a valid amount greater than 0</string>
     <string name="no_intakes_today">No water intake recorded today</string>
+    <string name="back">Back</string>
 
     <string name="nav_home">Home</string>
     <string name="nav_track">Track Water</string>
