@@ -52,7 +52,7 @@ fun WelcomeScreen(
         // Welcome Text
         AnimatedVisibility(
             visible = visible,
-            enter = fadeIn(delayMillis = 300) + slideInVertically()
+            enter = fadeIn() + slideInVertically()
         ) {
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
@@ -76,7 +76,7 @@ fun WelcomeScreen(
         // Features
         AnimatedVisibility(
             visible = visible,
-            enter = fadeIn(delayMillis = 600) + slideInVertically()
+            enter = fadeIn() + slideInVertically()
         ) {
             Column(
                 modifier = Modifier.fillMaxWidth(),
@@ -113,7 +113,7 @@ fun WelcomeScreen(
         // Get Started Button
         AnimatedVisibility(
             visible = visible,
-            enter = fadeIn(delayMillis = 900) + slideInVertically()
+            enter = fadeIn() + slideInVertically()
         ) {
             PrimaryButton(
                 text = stringResource(R.string.get_started),

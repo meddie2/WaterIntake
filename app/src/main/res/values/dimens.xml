@@ -1,11 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Screen Padding -->
+    <dimen name="screen_padding">16dp</dimen>
+    
     <!-- Spacing -->
     <dimen name="spacing_xs">4dp</dimen>
     <dimen name="spacing_sm">8dp</dimen>
-    <dimen name="spacing_md">16dp</dimen>
-    <dimen name="spacing_lg">24dp</dimen>
-    <dimen name="spacing_xl">32dp</dimen>
+    <dimen name="spacing_md">12dp</dimen>
+    <dimen name="spacing_lg">16dp</dimen>
+    <dimen name="spacing_xl">24dp</dimen>
+    <dimen name="spacing_xxl">32dp</dimen>
+    <dimen name="spacing_large">24dp</dimen>
+    <dimen name="spacing_medium">16dp</dimen>
+    
+    <!-- Component Sizes -->
+    <dimen name="icon_size">24dp</dimen>
+    <dimen name="image_size_sm">32dp</dimen>
+    <dimen name="image_size_md">48dp</dimen>
+    <dimen name="image_size_lg">64dp</dimen>
+    
+    <!-- Card Padding -->
+    <dimen name="card_padding">16dp</dimen>
+    
+    <!-- Button Sizes -->
+    <dimen name="button_height">48dp</dimen>
+    <dimen name="button_corner_radius">24dp</dimen>
+    
+    <!-- Text Sizes -->
+    <dimen name="text_size_sm">12sp</dimen>
+    <dimen name="text_size_md">14sp</dimen>
+    <dimen name="text_size_lg">16sp</dimen>
+    <dimen name="text_size_xl">20sp</dimen>
     
     <!-- Text Sizes -->
     <dimen name="text_xs">12sp</dimen>
@@ -16,20 +41,12 @@
     <dimen name="text_xxl">32sp</dimen>
     
     <!-- Component Sizes -->
-    <dimen name="button_height">48dp</dimen>
     <dimen name="input_height">56dp</dimen>
-    <dimen name="icon_size">24dp</dimen>
     <dimen name="icon_size_lg">48dp</dimen>
     
     <!-- Card Sizes -->
     <dimen name="card_elevation">4dp</dimen>
     <dimen name="card_corner_radius">8dp</dimen>
-    <dimen name="card_padding">16dp</dimen>
-    
-    <!-- Image Sizes -->
-    <dimen name="image_size_sm">48dp</dimen>
-    <dimen name="image_size_md">96dp</dimen>
-    <dimen name="image_size_lg">144dp</dimen>
     
     <!-- List Item Sizes -->
     <dimen name="list_item_height">72dp</dimen>
@@ -38,7 +55,6 @@
     <!-- Additional Component Sizes -->
     <dimen name="progress_indicator_padding">16dp</dimen>
     <dimen name="card_vertical_padding">8dp</dimen>
-    <dimen name="screen_padding">16dp</dimen>
     <dimen name="vector_icon_size">24dp</dimen>
     <dimen name="launcher_icon_size">108dp</dimen>
     

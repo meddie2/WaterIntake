@@ -27,6 +27,8 @@
     <string name="remaining">Remaining</string>
     <string name="add_water">Add Water</string>
     <string name="recent_intakes">Recent Intakes</string>
+    <string name="water_intake">Water Intake</string>
+    <string name="no_intakes_today">No intakes recorded today</string>
     
     <!-- Track Water Screen -->
     <string name="track_water_title">Track Your Water Intake</string>
@@ -34,6 +36,9 @@
     <string name="type_label">Type</string>
     <string name="save">Save</string>
     <string name="cancel">Cancel</string>
+    <string name="water_amount">Water Amount</string>
+    <string name="invalid_amount">Please enter a valid amount</string>
+    <string name="spacing_medium">Medium Spacing</string>
     
     <!-- Water Types -->
     <string name="water_type_plain">Plain Water</string>
